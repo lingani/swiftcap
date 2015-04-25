@@ -3,7 +3,7 @@ A typeahead prediction model suggests words as a user types to improve typing ef
 
 ### Installation
 
-    devtools::install_github ("nickwallen/swiftcap")
+    devtools::install_github ("lingani/swiftcap")
 
 ### Getting Started
 
@@ -13,5 +13,3 @@ A typeahead prediction model suggests words as a user types to improve typing ef
 
 ### Resources
 
-  * A [web application](https://farsite.shinyapps.io/swiftkey-cap/) was built to showcase the results of this model.
-  * A [web presentation](http://rpubs.com/willylane333/swiftkey-cap) was created to describe the underlying statistical model.
