@@ -1,0 +1,16 @@
+{
+    "contents" : "\noptions (cache_dir = \".ecache\")\noptions (verbose = FALSE)\n\n# where is the data stored?\ndata_path <- \"data-raw\"\n\n# unzip the data files, only if necessary\ntxts <- list.files (path = data_path, pattern = \"\\\\.txt$\", recursive = TRUE)\nif (length (txts) == 0) {\n\n    zips <- list.files (path = data_path, pattern = \"\\\\.zip$\", full.names = TRUE, recursive = TRUE)\n    for (zip in zips) unzip (zip, exdir = dirname (zip))\n}\n\n# create a corpus from the text input\nfiles <- list.files (data_path, pattern = \"\\\\.txt$\", full.names = TRUE)\ntext <- unlist (lapply (files, readLines, skipNul = TRUE))\n\n# remove the txt file\nfor (txt in txts){\n    f <- paste0(data_path, \"/\", txt)\n    if (file.exists (f))\n        file.remove (f)\n}\n\n\n# sample the original input\np <- 0.02\nif (p < 1.0) {\n    index <- as.logical (rbinom (n = length (text), size = 1, prob = p))\n    text <- text [index]\n}\n\n# ngrams <- ecache ({\n#\n#     # create the ngram model\n#     ngrams <- ngram (text, N = 1:3, sample = 0.01)\n#\n#\n# })\n\nmodel <- ngram (text)\n\n# persist the ngram model for internal use within the package\ndevtools::use_data (model)\n",
+    "created" : 1429923174908.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2660089117",
+    "id" : "97250DBC",
+    "lastKnownWriteTime" : 1429933468,
+    "path" : "F:/Cours/Coursera/The Data Science Specialization/Module 10 - Capstone Project/swiftcap/data-raw/ngrams.R",
+    "project_path" : "data-raw/ngrams.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

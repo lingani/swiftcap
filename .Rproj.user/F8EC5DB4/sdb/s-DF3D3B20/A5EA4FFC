@@ -1,0 +1,16 @@
+{
+    "contents" : "\nA typeahead prediction model suggests words as a user types to improve typing efficiency on constrained mobile devices. This is akin to products such as [Swiftkey](http://swiftkey.com) which is available for Android and iOS mobile devices. This was completed as the Project Capstone for the [Data Science Specialization](https://www.coursera.org/specialization/jhudatascience/1) offered by [Johns Hopkins University](http://www.jhu.edu/) through Coursera.\n\n### Installation\n\n    devtools::install_github (\"nickwallen/swiftcap\")\n\n### Getting Started\n\n    data (blogs)\n    fit <- ngram (blogs)\n    predict (fit, \"What is the next\")\n\n### Resources\n\n  * A [web application](https://farsite.shinyapps.io/swiftkey-cap/) was built to showcase the results of this model.\n  * A [web presentation](http://rpubs.com/willylane333/swiftkey-cap) was created to describe the underlying statistical model.\n",
+    "created" : 1429779326464.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2929518776",
+    "id" : "A5EA4FFC",
+    "lastKnownWriteTime" : 1429780055,
+    "path" : "F:/Cours/Coursera/The Data Science Specialization/Module 10 - Capstone Project/swiftcap/README.md",
+    "project_path" : "README.md",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "markdown"
+}

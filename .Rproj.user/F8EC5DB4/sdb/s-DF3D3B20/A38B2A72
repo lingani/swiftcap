@@ -1,0 +1,16 @@
+{
+    "contents" : "#\n# prepares the news data to be packaged\n#\n\np <- 0.02\ndata_path <- \"data-raw\"\n\n# unzip the text file\nzip <- file.path (data_path, \"en_US.blogs.zip\")\nunzip (zip, exdir = data_path)\n\n# load the text\ntxt <- file.path (data_path, \"en_US.blogs.txt\")\nblogs <- readLines (txt)\n\n# sample the text\nindex <- as.logical (rbinom (n = length (blogs), size = 1, prob = p))\nblogs <- blogs [index]\n\n# persist the blogs data for use within the package\ndevtools::use_data (blogs, overwrite = TRUE)\n\n# remove the txt file\nif (file.exists (txt))\n    file.remove (txt)\n",
+    "created" : 1429923125751.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3622090837",
+    "id" : "A38B2A72",
+    "lastKnownWriteTime" : 1429923776,
+    "path" : "F:/Cours/Coursera/The Data Science Specialization/Module 10 - Capstone Project/swiftcap/data-raw/blogs.R",
+    "project_path" : "data-raw/blogs.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
